@@ -1,0 +1,15 @@
+# Chapter 2
+- attribute is property of an object
+- data is collection of data objects and their attributes
+- diff types of attributes: nominal (ID numbers; =, !=), ordinal (on a scale: for rankings i.e comparison; <, >), intervals (+, -), ratio (comparitive; *, /) 
+- properties of attributes (distinctness, ranking/order, diff is meaningful, ratios are meaningful)
+- From nominal to ratio (the properties followed increase one by one)
+- Categorical Qualitative (Nominal, Ordinal) / Numeric Quantitative (Interval, Ratio)
+- Characteristics (Dimensionality i.e. num of attributes, Sparsity i.e asymmetry so focussing on presence, resolution)
+- Data form (Table - record data, matrices, document data - frequency matrix, Transaction data - Market Basket data, Graph data [Records have relationshiop with each other],)
+- Ordered Data (Order of transactions - Can help make stocking decisions), Genomic Sequence data)
+- Spatio-temporal data
+- Data Quality: Noise & Outliers (two diff things, noise means wrong values)
+- Outliers can mess up analysis by a lot
+- Missing values (eliminate data objects, ignore missing values during analysis, estimate the missing values)
+- Duplicate data

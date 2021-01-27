@@ -1,0 +1,65 @@
+# Chapter 2 (similarity / dissimilarity measures)
+- Proximity refers to the similarity or dissimilarity, can be measure in many different context
+- sometimes distance between columns or some times between rows
+- Similarity most of the times [0, 1]; dissimilarity 
+- For similarity metric in ordinal numbers, pay attention if order matters
+- Eucledian distance: each object is a point in the multi-dimensional space (if all attributes are numerical)
+- If different columns of different ranges, then normalise it; Need to standardize
+- Assumption is that every object has exact same number of attributes defined
+- Minkowski Distance: (a specific version of this i.e. r=2 gives eucledian distance)
+    - r=1 (City block, Manhatten, taxicab, L1 norm) distance
+        - Hamming distance is no of bits that are different between two binary vectors
+    - r=2 (eucledian distance)
+    - r=infinity (supremum, Lmax norm, Linfinity norm): max diff across all components / attributes
+- Mahalanobis distance b/w a pair of points; built in normalization; counters the spread more (counters the variance across dimensions with this distance); penalises high variance across dimensions / rewards dimensions with lower variance
+- Common properties of distance:
+    - distance to a point to itself = 0
+    - distance to a point to other point != 0
+    - symmetry (distance(x,y) == distance(y,x))
+    - Also, should follow triangle inequality
+- Distance satisfying all above properties is called a **metric**.
+- Common properties of similairty:
+    - s(x,y) = 1 (max)
+    - Symmetry (s(x,y) == s(y,x))
+- similarity b/w binary vectors:
+    - attributes have values only 0 & 1
+    - computer four possibilities (f01, f10, f00, f11)
+    - Simple matching cofficient: f11 + f00 / total length (f01 + f10 + f00 + f11)
+    - Jaccard cofficient: f11 / (only when atleast one is 1) i.e. (f01 + f10 + f11)
+    - Jaccard more interesting as interest on what bought (and what not bought which could be in millions)
+    - Absence of items is not considered, hence Jaccard used more
+- Assumption that vectors have same length
+- Cosine similairty where each entry is a number
+- Corr(x,y) = Cov(x,y) / std dev(x) * std dev(y); only for linear relationship
+- higher order relationship b/w x,y is not captured by Corr(x,y)
+- Corr vs Cosine vs Eucledian:
+    - Invariant to scaling (yes, yes, no)
+    - Invariant to tranlsation i.e. addition (no, yes, no)
+- Comp documents (diff document lengths i.e. article and text): Cosine
+- Temp at two diff locations (Celsius): Eucledian
+- Temp time series: Corr
+- Information based measure (cover from the book)
+- Data Preprocessing: 
+    - Feature subset selection; Dimensionality reduction, feature creation (have been replace by DL)
+    - Variable (attribute) transformation
+    - Discretization & Binarization (for nominal and categorical attributes)
+    - Sampling (given lot of data, work with a smaller subset of data)
+    - Aggregation
+- Aggregation:
+    - Combining multiple attributes into a single attribute
+- Sampling: 
+    - For data reduction
+    - Simple random sampling
+        - with / without replacement sampling
+    - Stratified sampling
+        - Equal representation of all classes
+- Discretization:
+    - Convert continuous to ordinal attribute
+    - Creation of eqaul width bins
+    - Also, have equal frequency bining
+    - Can use k-means clustering for bins creation
+    - Can also discretization using supervised settings
+- Binarization:
+    - Attributes are either continuous or categorical
+    - Convert them to one-hot encoding
+    
