@@ -38,7 +38,7 @@
 - Notion of how good a node is, also collectively how good all nodes are post-split
 
 #### Node Impurity:
-- **Gini Index:** Highest impurity (.5; means equal distribution for two class), Lowest impurity (0; for pure node). 
+- **Gini Index:** Highest impurity (.5; means equal distribution for two class), Lowest impurity (0; for pure node). = 1 - sum (fraction of all classes)^2
 - Highest impurity (1 - 1/c) i.e when distribution is exactly equal i.e. the attributes did not contribute anything.
 - **Gini split**: add gini index of each node weighted by records they contain (weighted impurity of all nodes)
 - If Gini split almost equal for two options, go for one which has lesser successors. 
@@ -47,6 +47,7 @@
 - *Misclassification error* is not good a metric, although has same properties but can have false positives. Misclassification error not a very good representation for the node impurity. 
 - Measure impurity before and after split, choose attribute that gives highest gain in the purity measure.
 - Gain = Previous purity - Combined purity measure (weighted by number of records)
+- These days split are only binary, earlier the concept of smaller number of successors with same gain was introduced.
 
 #### Working with continuous attributes (Computing Gini Index):
 - Sort the data records that is continuous
@@ -55,11 +56,16 @@
 
 #### Gain Ratio:
 - Gain ratio = Gain_split / split_info (to penalize more number of successors)
+- Split info very high if splititng into many successors that are very large 
+- Missclassification error not good a metric for impureity measure  
 
 #### Advantages:
 - Computationally cheap to construct
 - DL and SVM can take a long time, runtime for decision trees is linear once data is sorted
 - Very fast inference time
+- Can automatically weight that attributes, thus don't need to normalise the data
 - Highly interpretable, compared with black box DL models and complicated kernels
 - Robust to noise (low variance) - when overfitting is avoided (using random forest)
 
+#### Disadvantages: 
+- Does not deal with scnearios of interacting attributes, where multiple attributes come together to separate classes from each other.
