@@ -55,6 +55,10 @@
 			- If conditional independence assumption not correct, this doesnt not stand
 			- Here above; Sum of P(X1_values|Yj) = 1
 
+## Advantages of Naive Bayes:
+- If no attributes available, still have priori of classes
+- Bayesian frameworks shine best in the absence of information around instances
+
 ## Demerits of Naive Bayes classifier:
 - Assumption of the independence of the class attributes
 - P(Xn|Y1) = 0 makes contribution from all other attributes = 0 (loss of information)
