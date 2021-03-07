@@ -28,6 +28,8 @@
     - Jaccard cofficient: f11 / (only when atleast one is 1) i.e. (f01 + f10 + f11)
     - Jaccard more interesting as interest on what bought (and what not bought which could be in millions)
     - Absence of items is not considered, hence Jaccard used more
+- **Jaccard focuses on similarity, Hamming focusses on difference**
+- SMC = (1 - Hamming / all_bits)
 - Assumption that vectors have same length
 - Cosine similairty where each entry is a number
 - Corr(x,y) = Cov(x,y) / std dev(x) * std dev(y); only for linear relationship
